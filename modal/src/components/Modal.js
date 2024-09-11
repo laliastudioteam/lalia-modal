@@ -1,4 +1,6 @@
+// React
 import React from "react";
+// Style
 import "../styles/Modal.css";
 
 const Modal = ({
@@ -14,7 +16,6 @@ const Modal = ({
 	if (!show) {
 		return null;
 	}
-
 	const handleButtonClick = () => {
 		if (linkUrl) {
 			window.open(linkUrl, "_blank", "noopener,noreferrer");
