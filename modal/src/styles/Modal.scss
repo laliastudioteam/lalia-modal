@@ -1,0 +1,58 @@
+@import "../styles/base";
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: $color1;
+    padding: 20px;
+    border-radius: $bradius;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-btn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 4px;
+    font-size: 16px;
+    border-radius: $bradiusbtn;
+}
+
+.close-modal-button {
+    background-color: $color4;
+    color: $color1;
+}
+
+.link-button {
+    background-color: $color2;
+    color: $color1;
+}
+
+.link-button:hover {
+    background-color: $color3;
+}
