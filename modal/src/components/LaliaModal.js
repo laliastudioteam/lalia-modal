@@ -1,38 +1,23 @@
-// React
 import React from "react";
-// Style
-import "../styles/Modal.css";
+import "../styles/LaliaModal.css";
 
-const Modal = ({
-	show,
+const LaliaModal = ({
+	show = true,
 	onClose,
 	title,
 	content,
-	linkText,
-	linkUrl,
 	closeButtonText,
 	showCloseIcon = true,
 }) => {
 	if (!show) {
-		return null;
+		return null; // La modal ne s'affiche pas si `show` est `false`
 	}
-	const handleButtonClick = () => {
-		if (linkUrl) {
-			window.open(linkUrl, "_blank", "noopener,noreferrer");
-		}
-	};
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>
 			<div className="modal-content" onClick={e => e.stopPropagation()}>
 				<h2>{title}</h2>
 				<p>{content}</p>
-
-				{linkUrl && linkText && (
-					<button className="modal-btn link-button" onClick={handleButtonClick}>
-						{linkText}
-					</button>
-				)}
 				{showCloseIcon && (
 					<button className="close-button" onClick={onClose}>
 						X
@@ -46,4 +31,4 @@ const Modal = ({
 	);
 };
 
-export default Modal;
+export default LaliaModal;

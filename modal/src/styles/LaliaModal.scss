@@ -46,6 +46,9 @@
 .close-modal-button {
     background-color: $color4;
     color: $color1;
+    &:hover {
+        background-color: $color2;
+    }
 }
 
 .link-button {

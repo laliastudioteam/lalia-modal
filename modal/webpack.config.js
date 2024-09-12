@@ -1,35 +1,48 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-	entry: "./src/index.js", // Point d'entrée du projet
+	entry: "./src/index.js",
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "bundle.js",
-		clean: true, // Nettoie le dossier dist avant chaque build
+		filename: "index.js",
+		library: {
+			name: "LaliaModal",
+			type: "umd",
+		},
+		clean: true,
 	},
-	mode: "development", // Ou 'production' en fonction du build
+	mode: "development", // ou 'production'
 	devServer: {
-		static: "./dist",
-		port: 3000, // Port de développement local
-		open: true, // Ouvre automatiquement le navigateur
+		static: path.join(__dirname, "dist"),
+		port: 3000,
+		open: true,
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/, // Gestion des fichiers JS/JSX
+				test: /\.js$/,
 				exclude: /node_modules/,
 				use: "babel-loader",
 			},
 			{
-				test: /\.css$/, // Gestion des fichiers CSS
+				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
 			},
 		],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: "./public/index.html", // Template HTML de base
+			template: "./public/index.html",
+			publicPath: "/", // Définit le chemin de base pour les assets
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{from: "public/favicon.ico", to: "favicon.ico"},
+				{from: "public/logo192.png", to: "logo192.png"},
+				{from: "public/manifest.json", to: "manifest.json"},
+			],
 		}),
 	],
 };

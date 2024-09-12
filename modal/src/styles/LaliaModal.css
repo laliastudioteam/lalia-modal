@@ -45,6 +45,9 @@
   background-color: #aaaaaa;
   color: #fff;
 }
+.close-modal-button:hover {
+  background-color: #007bff;
+}
 
 .link-button {
   background-color: #007bff;
@@ -53,4 +56,4 @@
 
 .link-button:hover {
   background-color: #0056b3;
-}/*# sourceMappingURL=Modal.css.map */
+}/*# sourceMappingURL=LaliaModal.css.map */
