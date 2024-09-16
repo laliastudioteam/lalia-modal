@@ -10,7 +10,7 @@ const LaliaModal = ({
 	showCloseIcon = true,
 }) => {
 	if (!show) {
-		return null; // La modal ne s'affiche pas si `show` est `false`
+		return null;
 	}
 
 	return (
