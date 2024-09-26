@@ -6,7 +6,7 @@ This project was made by Cedric Delabarre for OpenClassRooms
 
 With this project you will be able to use a react modal
 
-# `npm install lalia-modal`
+### `npm install lalia-modal`
 
 Will install lalia modal in your react project
 
@@ -18,16 +18,16 @@ After you install, the files will be available in the node_modules directory
 
 This module can be changed modifying the component sources
 
-# /src
+### /src
 
 ## Styling
 
 Styles in SCSS format are available for modifcations
 
-# in src/styles
+### in src/styles
 
 ## Structure
 
 File structure is available
 
-# in src/components/
+### in src/components/
